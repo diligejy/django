@@ -12,3 +12,6 @@ class Fcuser(models.Model):
 
     class Meta:
         db_table = 'fastcampus_fcuser'
+        verbose_name = '패스트캠퍼스 사용자'
+        # 장고는 복수형을 보여주기 때문에 복수형에 대한 설정 필요
+        verbose_name_plural = '패스트캠퍼스 사용자'
