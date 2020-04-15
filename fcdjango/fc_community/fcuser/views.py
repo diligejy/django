@@ -1,4 +1,5 @@
 from .models import Fcuser
+from .forms import LoginForm
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.hashers import make_password, check_password
@@ -14,26 +15,16 @@ def home(request):
     return HttpResponse('Home!')
 
 def login(request):
-    if request.method == 'GET':
-        return render(request, 'login.html')
-    elif request.method == 'POST':
-        username = request.POST.get('username', None)
-        password = request.POST.get('password', None)
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            # session
+            request.session['user'] = form.user_id
+            return redirect('/')
+    else:
+        form = LoginForm()
 
-        res_data = {}
-
-        if not (username and password):
-            res_data['error'] = '값을 입력해주세요.'
-        else:
-            fcuser = Fcuser.objects.get(username=username)
-            if check_password(password, fcuser.password):
-                request.session['user'] = fcuser.id
-                # 비밀번호가 일치, 로그인 처리
-                return redirect('/')
-            else:
-                res_data['error'] = '비밀번호를 틀렸습니다'
-
-        return render(request, 'login.html', res_data)
+    return render(request, 'login.html', {'form' : form})
 
 def logout(request):
     if request.session.get('user'):
