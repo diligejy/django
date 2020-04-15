@@ -35,6 +35,13 @@ def login(request):
 
         return render(request, 'login.html', res_data)
 
+def logout(request):
+    if request.session.get('user'):
+        del(request.session['user'])
+    
+    return redirect('/')
+
+
 def register(request):
     if request.method == 'GET':
         return render(request, 'register.html')
