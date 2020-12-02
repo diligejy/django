@@ -1,6 +1,2 @@
-<<<<<<< HEAD
-pinterest\pragmatic\.env
-pinterest\pragmatic\myvenv
-=======
-C:\Users\jinyoung\Pictures\django\pinterest\pragmatic\.env
->>>>>>> d460e51... env
+pinterest/pragmatic/.env
+pinterest/pragmatic/myvenv
