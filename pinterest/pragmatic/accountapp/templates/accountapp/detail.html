@@ -10,7 +10,10 @@
 
         {% if target_user.profile %}
         <h2 style="font-family: 'NanumSquareB';">
-            {{ target_user.user }}
+            {{ target_user.profile.nickname }}
+            <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                edit
+            </a>
         </h2>
         {% else %}
         <a href="{% url 'profileapp:create' %}">
