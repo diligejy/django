@@ -205,7 +205,7 @@ pydocstyle==4.0.1
 pydot==1.4.1
 pyflakes==2.1.1
 pygame==1.9.6
-Pygments==2.5.2
+Pygments==2.7.4
 pylint==2.4.4
 PyMeeus @ file:///home/conda/feedstock_root/build_artifacts/pymeeus_1589222711601/work
 PyMySQL==0.9.3
