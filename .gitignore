@@ -2,6 +2,7 @@ pinterest/pragmatic/.env
 pinterest/pragmatic/myvenv
 pinterest/pragmatic/media
 django_bootstrap_jungseok/db.sqlite3
+migrations/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
